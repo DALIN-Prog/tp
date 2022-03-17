@@ -2,16 +2,12 @@ package seedu.address.model.person;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-import seedu.address.model.lineup.LineupName;
 import seedu.address.model.tag.Tag;
-import seedu.address.model.team.TeamName;
 
 /**
  * Represents a Person in the address book.
@@ -30,8 +26,6 @@ public class Person {
     private final JerseyNumber jerseyNumber;
     private final Set<Tag> tags = new HashSet<>();
     private final Weight weight;
-    private TeamName teamName;
-    private List<LineupName> lineUpName;
 
     /**
      * Every field must be present and not null.
@@ -47,8 +41,6 @@ public class Person {
         this.jerseyNumber = jerseyNumber;
         this.tags.addAll(tags);
         this.weight = weight;
-        this.teamName = null;
-        this.lineUpName = new ArrayList<>();
     }
 
     public Name getName() {
