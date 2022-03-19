@@ -11,7 +11,6 @@ import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.lineup.LineupName;
 import seedu.address.model.person.Address;
-import seedu.address.model.person.Age;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Height;
 import seedu.address.model.person.JerseyNumber;
@@ -19,8 +18,6 @@ import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
 import seedu.address.model.person.Weight;
 import seedu.address.model.tag.Tag;
-import seedu.address.model.team.TeamName;
-
 
 /**
  * Contains utility methods used for parsing strings in the various *Parser classes.
@@ -28,15 +25,6 @@ import seedu.address.model.team.TeamName;
 public class ParserUtil {
 
     public static final String MESSAGE_INVALID_INDEX = "Index is not a non-zero unsigned integer.";
-
-    /**
-     * Parses a player.
-     */
-    public static Name parsePlayer(String targetPlayerName) throws ParseException {
-        requireNonNull(targetPlayerName);
-        String trimmedName = targetPlayerName.trim();
-        return new Name(trimmedName);
-    }
 
     /**
      * Parses {@code oneBasedIndex} into an {@code Index} and returns it. Leading and trailing whitespaces will be
@@ -97,21 +85,6 @@ public class ParserUtil {
     }
 
     /**
-     * Parses a {@code String age} into an {@code Age}.
-     * Leading and trailing whitespaces will be trimmed.
-     *
-     * @throws ParseException
-     */
-    public static Age parseAge(String age) throws ParseException {
-        requireNonNull(age);
-        String trimmedAge = age.trim();
-        if (!Age.isValidAge(age)) {
-            throw new ParseException(Age.MESSAGE_CONSTRAINTS);
-        }
-        return new Age(trimmedAge);
-    }
-
-    /**
      * Parses a {@code String email} into an {@code Email}.
      * Leading and trailing whitespaces will be trimmed.
      *
@@ -169,21 +142,6 @@ public class ParserUtil {
             throw new ParseException(JerseyNumber.MESSAGE_CONSTRAINTS);
         }
         return new JerseyNumber(trimmedJerseyNumber);
-    }
-
-    /**
-     * Parses a {@code String teamName} into an {@code TeamName}.
-     * Leading and trailing whitespaces will be trimmed.
-     *
-     * @throws ParseException
-     */
-    public static TeamName parseTeamName(String teamName) throws ParseException {
-        requireNonNull(teamName);
-        String trimmedTeamName = teamName.trim();
-        if (!TeamName.isValidTeamName(trimmedTeamName)) {
-            throw new ParseException(TeamName.MESSAGE_CONSTRAINTS);
-        }
-        return new TeamName(trimmedTeamName);
     }
 
     /**

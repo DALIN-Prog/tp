@@ -3,7 +3,6 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_LINEUP;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PLAYER;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_TEAM;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -17,24 +16,18 @@ public class ViewCommand extends Command {
 
     public static final String COMMAND_WORD = "view";
 
-    public static final String MESSAGE_USAGE_TEAM = "To view team, parameters: " + PREFIX_TEAM + "[TEAM_NAME]\n"
-            + "Example: " + COMMAND_WORD + " " + PREFIX_TEAM + " Lakers"
-            + " OR "
-            + COMMAND_WORD + " " + PREFIX_TEAM;
-
     public static final String MESSAGE_USAGE_PLAYER = "To view player, parameters: " + PREFIX_PLAYER + "[PLAYER_NAME]\n"
             + "Example: " + COMMAND_WORD + " " + PREFIX_PLAYER + " LBJ"
             + " OR "
             + COMMAND_WORD + " " + PREFIX_PLAYER;
 
     public static final String MESSAGE_USAGE_LINEUP = "To view lineup, parameters: " + PREFIX_LINEUP + "[LINEUP_NAME]\n"
-            + "Example: " + COMMAND_WORD + " " + PREFIX_TEAM + " Lakers " + PREFIX_LINEUP + " starting5"
+            + "Example: " + COMMAND_WORD + " Lakers " + PREFIX_LINEUP + " starting5"
             + " OR "
-            + COMMAND_WORD + " " + PREFIX_TEAM + " Lakers " + PREFIX_LINEUP;
+            + COMMAND_WORD + " " + " Lakers " + PREFIX_LINEUP;
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Views the summarised information of "
             + "team, lineup and player.\n"
-            + MESSAGE_USAGE_TEAM + "\n"
             + MESSAGE_USAGE_PLAYER + "\n"
             + MESSAGE_USAGE_LINEUP;
 
